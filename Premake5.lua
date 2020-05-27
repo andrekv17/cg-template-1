@@ -15,8 +15,7 @@ workspace "Computer Graphics"
 
    targetdir ("bin/%{prj.name}/%{cfg.longname}")
    objdir ("obj/%{prj.name}/%{cfg.longname}")
-
-
+   --[[
 group "01. Black image"
    project "Black image lib"
       kind "StaticLib"
@@ -41,7 +40,6 @@ group "01. Black image"
       files { "lib/stb/stb_image.h", "tests/utils.h", "tests/black_image_tests.cpp" }
       links "Black image lib"
       debugargs { "--benchmark-samples", "25" }
---[[
 group "02. Color space"
    project "Color space lib"
       kind "StaticLib"
@@ -81,7 +79,6 @@ group "03. Draw line"
       includedirs { "lib/linalg"}
       links "Draw line lib"
       files { "src/draw_line_main.cpp" }
-
    project "Draw line tests"
       kind "ConsoleApp"
       includedirs { "src" }
@@ -116,7 +113,6 @@ group "04. Read obj"
       files { "lib/stb/stb_image.h", "tests/utils.h", "tests/read_obj_tests.cpp" }
       links "Read obj lib"
       debugargs { "--benchmark-samples", "25" }
-
 group "05. Projection"
    project "Projection lib"
       kind "StaticLib"
@@ -166,6 +162,8 @@ group "06. Triangle rasterization"
       files { "lib/stb/stb_image.h", "tests/utils.h", "tests/triangle_rasterization_tests.cpp" }
       links "Triangle rasterization lib"
       debugargs { "--benchmark-samples", "25" }
+      
+      --]]
 
 group "07. Z-buffer culling"
    project "Z buffer culling lib"
@@ -191,6 +189,7 @@ group "07. Z-buffer culling"
       files { "lib/stb/stb_image.h", "tests/utils.h", "tests/z_buffer_culling_tests.cpp" }
       links "Z buffer culling lib"
       debugargs { "--benchmark-samples", "25" }
+--[[
 
 group "08. Phong model"
    project "Phong model lib"
@@ -266,4 +265,4 @@ group "10. Shadow mapping"
          files { "lib/stb/stb_image.h", "tests/utils.h", "tests/shadow_mapping_tests.cpp" }
          links "Shadow mapping lib"
          debugargs { "--benchmark-samples", "25" }
---]]
+         --]]
